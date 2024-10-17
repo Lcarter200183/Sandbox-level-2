@@ -1,0 +1,98 @@
+<head>
+
+    <title>form Inputs</title>
+</head>
+<body>
+    <h1> FOrms Input</h1>
+
+    <h2>Inputs</h2>
+    
+    <h2>Button</h2> 
+
+    <pre>
+    <button type="button">Click button</button><br>
+    <input type="button" value="Click button" /><br>
+    <input type="submit" value="Add submission" /><br>
+    <input type="reset" value="Reset form" /><br>
+    <input type="image" src="submit-button.png"/><br>
+    <input type="radio" /> Radio button<br>
+    <input type="checkbox" /> Checkbox<br>
+    </pre>
+
+
+    <h3>Text Inputs</h3>
+    <pre>
+     <input type="text" placeholder="Text input">
+
+     <input type="email" placeholder="Email input">
+
+     <input type="Tpl" placeholder="Phone number input">
+
+     <input type="number" placeholder="Number input">
+
+     <input type="password" placeholder="password input">
+
+     <input type="search" placeholder="Search input">
+
+     <input type="url" placeholder="Url input">
+    </pre>
+
+    <h3>Interface
+        <pre>
+            <input type="file">
+            <input type="color"> color picker
+            <input type="time">
+            <input type="week">
+            <input type="month"> Month picker
+            <input type="date">
+            <input type="datetime-local">
+            <input type="number" min="10" max="30"> Number range
+            <input type="range" min="10" max="30"> Number slider
+            <select>
+                
+                <option>item 1</option>
+                <option>item 2</option>
+                <option>item 3</option>
+                <option> Selected Dropdown</option>
+            </select> 
+        </pre>
+        <hr />
+    </h3>
+   
+    <h2>form</h2>
+    <h3>Validation</h3>
+    <pre>
+       Forms can validate their input.
+       Inputs are checked before being submitted.
+       Type invalid values to see form validation.
+    </pre>
+</form>
+    <form>
+        <input type="email" placeholder="Email input">
+        <input type="submit" />
+
+        <form>
+            <input required type="password" placeholder="Password">
+            <button type="submit">Submit</button>
+        </form>
+     
+        <form>
+       <input 
+       type="text" 
+       placeholder="Input length"
+       minlength="5"
+       maxlength="10"
+       /> 
+       <input type="submit" />
+    </form>
+
+    <form>
+        <input type="tel" 
+        placeholder="Phone number input" 
+        pattern="(0-9){3}-(0-9){3}-(0-9){4}" 
+        />
+        <input type="submit" />
+        ###-###-####
+
+    </form>
+</body>
