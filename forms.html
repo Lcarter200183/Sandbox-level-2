@@ -1,13 +1,16 @@
 <head>
 
     <title>form Inputs</title>
+    <script src="utility-functions.js"></script>
+    <script src="forms.js"></script>
 </head>
+
 <body>
-    <h1> Forms Input</h1>
+    <h1> Form Input</h1>
 
     <h2>Inputs</h2>
-    
-    <h2>Button</h2> 
+
+    <h2>Button</h2>
 
     <pre>
     <button type="button">Click button</button><br>
@@ -26,19 +29,19 @@
 
      <input type="email" placeholder="Email input">
 
-     <input type="Tpl" placeholder="Phone number input">
+     <input type="Tel" placeholder="Phone number input">
 
      <input type="number" placeholder="Number input">
 
-     <input type="password" placeholder="password input">
+     <input type="password" placeholder="Password input">
 
      <input type="search" placeholder="Search input">
 
-     <input type="url" placeholder="Url input">
+     <input type="url" placeholder="URL input">
     </pre>
 
-    <h3>Interface
-        <pre>
+    <h3>Interface</h3>
+    <pre>
             <input type="file">
             <input type="color"> color picker
             <input type="time">
@@ -56,43 +59,56 @@
                 <option> Selected Dropdown</option>
             </select> 
         </pre>
-        <hr />
-    </h3>
-   
-    <h2>form</h2>
+
+    <hr />
+
+
+    <h2>Forms</h2>
     <h3>Validation</h3>
     <pre>
        Forms can validate their input.
        Inputs are checked before being submitted.
        Type invalid values to see form validation.
     </pre>
-</form>
+
     <form>
         <input type="email" placeholder="Email input">
         <input type="submit" />
-
-        <form>
-            <input required type="password" placeholder="Password">
-            <button type="submit">Submit</button>
-        </form>
-     
-        <form>
-       <input 
-       type="text" 
-       placeholder="Input length"
-       minlength="5"
-       maxlength="10"
-       /> 
-       <input type="submit" />
     </form>
+
+    <form onsubmit="myProcessForm(event)">
+        <input required name="myPassword" type="password" placeholder="Password input">
+        <br>
+        <input /><br>
+        <input /><br>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
 
     <form>
-        <input type="tel" 
-        placeholder="Phone number input" 
-        pattern="(0-9){3}-(0-9){3}-(0-9){4}" 
-        />
+        <input type="text" placeholder="Input length" minlength="5" maxlength="10" />
         <input type="submit" />
-        ###-###-####
-
     </form>
+    <br>
+    <form>
+        <input type="tel" placeholder="Phone number input" pattern="(0-9){3}-(0-9){3}-(0-9){4}" />
+        <input type="submit" /> ###-###-####
+    </form>
+
+    <h3>Processing</h3>
+
+    <form onsubmit="myProcessForm(event)">
+
+        <input type="text" placeholder="Password Input" />
+
+        <input name="firstname" placeholder="First Name" />
+
+        <input name="lastname" placeholder="Last Name" />
+        <p>
+            The form array only contains form input. This is a paragraph, not in the form array.
+        </p>
+        <input type="submit" value="Submit Form!">
+    </form>
+
+    <output id="outputTag"></output>
 </body>

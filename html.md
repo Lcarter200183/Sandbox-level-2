@@ -7,7 +7,6 @@
 3. Insert a list into `<li>`
 4. Add `<li>` to the sub-level list
 
-
 ### HTML ENTITIES
 
 1. Special characters rendered  by special code.
@@ -18,8 +17,6 @@
 
 ### CODE EMPHASIS
 
-1. `code>` adds emphasis by using monospace font and changing the color.
+1. `<code>` adds emphasis by using monospace font and changing the color.
    
-  ### PREFORMATTED TEXT
-
- 1.`code` adds emphasis by using monospace font and changing  
+  ### PREFORMATTED TEXT 

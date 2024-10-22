@@ -120,15 +120,24 @@ rm -rf .git
    - Views the branch
   
   ### MERGE TEST
+
+ INITIONALIZ SOURCE CONTROL
+
   1. `git init` //initionalize an empty Git repository
   2. `git config user.name myusername`
   3. `git config user.email` 
   4. `touch` index.html
   5. git add .
-  6. git commit -m "added files"
+  6. git commit -m "added files
+   
+   PUSH TO A NEW REPOSITORY
+  
   7.  Github Create a Github repository called merge-test
-  8. `git remote add origin https;//myMergeTestRepository`
-  9. `git push --set-upstream origin main`
+  8.  `git remote add origin https;//myMergeTestRepository`
+  9.  `git push --set-upstream origin main`
+  
+  MERGE THE BRANCH
+
   10. `git branch mybranch`
   11. `git switch myBranch`
   12. Add `<p>Hello World<!/p>` to the index.html file
@@ -139,6 +148,9 @@ rm -rf .git
   17. Change the history from `Auto` to `All`
   18. `git merge myBranch`
   19. `git push`
+   
+  SET UP FOR REBASE
+  
   20. `git switch myBranch`
   21. Add `<p>Amazing World!</p>` to index.htmlfile.
   22. Save the changes CTRL + S
@@ -150,6 +162,9 @@ rm -rf .git
   28. `git commit -m "added a file"`
   29. `git merge myBranch`
   30. Approve the merge by closing the merge editor or the VIM editor by typing `:qa` then `enter`
+  
+  REBASE THE COMMITS
+
   31. `git rebase myBranch`
   32. `git push`
   33. `git switch myBranch`
