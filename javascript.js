@@ -31,18 +31,18 @@ function classVsObject() {
 
 
 function display(message) {
-    document.write(message;
-    }
+    document.write(message);
+}
 
-    function greeting() {
-        display("Hello World!");
-    }
+function greeting() {
+    display("Hello World!");
+}
 
-    function myFunction(callbackFunction) {
-        callbackFunction();
-    }
+function myFunction(callbackFunction) {
+    callbackFunction();
+}
 
-    function activator() {
-        debugger;
-        myFunction(greeting);
-    }
+function activator() {
+    debugger;
+    myFunction(greeting);
+}
