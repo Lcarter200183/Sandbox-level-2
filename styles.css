@@ -1,11 +1,174 @@
-p {
+.inline {
     display: inline;
 }
 
-a {
+.block {
     display: block;
 }
 
-img {
+.none {
     display: none;
+}
+
+.transparent green {
+    color: rgb(6, 68, 0, 0.25);
+}
+
+.thumbs-up {
+    background-image: url("thumbs-up.png");
+}
+
+.size12 {
+    background-size: 12%
+}
+
+.no-repeat {
+    background-repeat: repeat;
+}
+
+.space {
+    background-repeat: space;
+}
+
+.repeat-horizontal {
+    background-repeat: space no-repeat;
+}
+
+.repeat-vertical {
+    background: no-repeat repeat;
+}
+
+.bg-center {
+    background-position: center;
+}
+
+.bg-offcenter {
+    background-position: 20% 30%;
+}
+
+.gradient-basic {
+    background-image: linear-gradient(white, gray);
+}
+
+.gradient-colors {
+    background-image: linear-gradient(white, gray, green);
+}
+
+.gradient-direction {
+    background-image: linear-gradient(to bottom left green, white, gray);
+}
+
+.gradient-degree {
+    background-image: linear-gradient(90deg white, gray, green);
+}
+
+.gradient-stops {
+    background-image: linear-gradient(90deg black, gray 10% 90%, black);
+}
+
+.width100 {
+    width: 100%;
+}
+
+.height {
+    height: 200px;
+}
+
+.opacity25 {
+    opacity: o.25;
+}
+
+.opacity0 {
+    opacity: 0;
+}
+
+.i-green,
+.b-green {
+    color: green;
+}
+
+i b {
+    color: green;
+}
+
+#red-italic {
+    color: red;
+    font-style: italic;
+}
+
+.blue-bold {
+    color: blue;
+    font-weight: bold;
+}
+
+article {
+    color: sandybrown !important;
+}
+
+article {
+    /* color:green !important; */
+    color: green;
+    font-weight: bold;
+}
+
+.border-dashed {
+    border-style: dashed !important;
+}
+
+.border-dotted {
+    border-style: dotted !important;
+}
+
+.border-double {
+    border-style: ridge !important;
+}
+
+.border-groove {
+    border-style: ridge !important;
+}
+
+.border-ridge {
+    border-style: ridge !important;
+}
+
+.border-inset {
+    border-style: ridge !important;
+}
+
+.border-outside {
+    border-style: ridge !important;
+}
+
+.box-shadow {
+    box-shadow: 2px 2px gray;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px gray;
+}
+
+.rotate:hover {
+    transform: rotate(20deg);
+}
+
+.translate:hover {
+    transform: translate(10px, -10px);
+}
+
+.scale:hover {
+    transform: scale(2);
+}
+
+.scale-rotate:hover {
+    transform: scale(2) rotate(20deg);
+}
+
+.animation:hover {
+    transform: scale(2) rotate(20deg);
+    transition: transform 2s;
+}
+
+.animation: {
+    transform: scale(1) rotate(20deg);
+    transition: transform 2s;
 }

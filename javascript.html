@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link href="javascript.css" rel="stylesheet" />
+    <script src="javascript.js"></script>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <pre>
+            Activator function 
+            ------------------------
+            <code>
+                function greeting() {
+                    display("Hello world!");
+                }
+            </code>
+            A function that dosen't have parameters.
+            It's only purpose is to call a functionwith parameters.
+            
+            <button onclick="greeting()">Activate me!</button>
+        </pre>
+
+        <pre>
+        <button onclick=""></button>
+       
+        </pre>
+
+
+        <pre>
+            
+         <button onclick=""></button>
+           
+        </pre> Asynchronous ----------------------------------- function asynchronous() { display("Waiting for the greeting...") } Able to run other code while waiting for some code to respond. Like multitasking. Other code runs immediately after
+        setTimeout The greeting function runs after other code.
+
+        <button onclick="">Delayed greeting</button>
+
+        </pre>
+
+        <pre>
+            server stimulation
+
+
+
+
+         <button onclick=""></button>   
+        </pre>
+
+        <pre>
+
+        </pre>
+
+        <pre>
+
+
+        </pre>
+
+        <pre>
+
+        </pre>
+
+
+        <pre>
+        <code>    
+
+         </code>
+         A server takes time to respond.   
+         Use asynchronous code to simulate it. 
+         <form onsubmit="submitForm(event)">
+         <label for="email">Email:</label><br> 
+         <input type="email" id="email" name="email" required <br>
+         <input type="submit" />
+         </form>
+         </pre>
+
+        <pre>
+             Json stringify 
+             ----------------------------------
+             <code> 
+             function displayObject() {
+                const myCar = {
+                    color: "red",
+                    year: 2024,
+                }
+                const result = JSON.stringify(myCar);
+                display(result);
+             }
+         
+            </code>
+         Generates a string from an object. 
+         Need to store result. 
+         JSON - JavaScript Object Notation Servers communicate with stringify objects The syntax we ose to represent objects. 
+           - Curly braces represent an object. 
+           - Properties are seperated by a comma 
+           - Properties in quotes 
+           - Values are set with colon
+
+         <button onclick="displayObject()">Display Object</button>
+         </pre>
+
+        <pre>
+          Javascript 
+          <code>
+            class MyCar {
+                color ="red";
+                year =2024;
+            }
+          </code>
+          A JavaScript class is like a template. 
+          It predefines an object without creating it.
+          Usually created towards the top od a JavaScript file
+
+          Syntax: 
+          1. Keyword <code>class</code> 
+          2. Class name, usually in PascalCase 
+             - PascalCase is like camelCase, but starts with a capital.
+          3. Curly braces 
+          4. Assign properties their values 
+             - Use equal signs and semi-colons
+         </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <pre>
+            JavaScript class vs object 
+            -----------------------------------
+            <code>
+                class MyCar {
+                    color = "red";
+                    year = 2024;
+                }
+                
+                const myCar = {
+                    color: "red",
+                    year: 2024,
+                };
+             </code>
+             Directly displayig a class shows its code.
+             In developer tools, a class has a name and length. 
+             The JavaScript class is different from a JavaScript object.
+             The syntax of a class is different than an object. 
+
+             <button onclick="classVsObject()"></button>
+             </pre>
+
+        <pre>
+             Create a new object from a class
+             -------------------------------- 
+             <code>
+                const myCar = new MyCar(); 
+                const myCar2 = new MyCar(); 
+                const myCar3 = new MyCar();
+
+                myCar2.color = "white";
+                myCar3.year = 2025;
+
+             </code>
+             The Objects start with the properties and values defined by the class. 
+             The objects are independent.
+              - The values of their properties can be changed individually.
+             Syntax: 
+             1. Keyword <code>new</code>
+             2. Name of the class with parentheses after it. 
+             3. Store the value 
+                - the value is an object created from the class
+
+             <button onclick="newObject">Create Object from class</button>
+             </pre>
+
+    </main>
+    <footer></footer>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SASS</title>
+    <link href="sass.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <h1>SASS</h1>
+        <p>Syntactically <b>Awesome</b>Stylesheet</p>
+
+        <pre>SASS <code>nesting</code> syntax
+        pre {
+            code {
+                color: red;
+            }
+        }
+        A style can be nested in another style to select  a nested element.
+        The code tag in the pre tag is styled.
+        </pre>
+
+        <pre>
+           SASS <i>variable</i> syntax
+           $myColor: purple;
+           pre {
+              i {
+                color: $myColor;
+                 }
+            }
+           SASS variable starts with $
+           Use colon to store a value 
+           Use the variable name to acess the value
+        </pre>
+
+        <pre>
+           Horizontal repeat variable
+        </pre>
+        <div class="horizontalRepeat width height">Hello World!</div>
+
+    </main>
+    <footer></footer>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+h1 {
+  color: green;
+}
+
+p b {
+  color: blue;
+}
+
+pre code {
+  color: red;
+}
+
+pre i {
+  color: purple;
+}
+
+.horizontalRepeat {
+  background-image: url("thumbs-up.png");
+  background-size: 5%;
+}
+
+.width {
+  width: 100vw;
+}
+
+.height {
+  height: 200px;
+}

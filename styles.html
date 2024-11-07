@@ -1,14 +1,15 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title></title>
+    <title>Styles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body class="thumbs-up">
     <header>CSS Notes</header>
-    <main>
+    <main class="gradient">
         <h1>h1 tag</h1>
         <pre>
             Display block       
@@ -16,24 +17,334 @@
             The a tag are now block elements.
             They have their own line. 
         </pre>
-        <a>a tag</a>
-        <a>a tag</a>
-        <a>a tag</a>
+        <a class="block">a tag</a>
+        <a class="block">a tag</a>
+        <a class="block">a tag</a>
+
         <pre>
         Display inline
         Makes elements in line.
         The p tag are now inline
-                
-       </pre>
-        <p>p tag1</p>
-        <p>p tag2</p>
-        <p>p tag3</p>
+        </pre>
+        <p class="inline">p tag1</p>
+        <p class="inline">p tag2</p>
+        <p class="inline">p tag3</p>
 
         <pre>
             display: none;
             Makes the element invisible,
-            but it's still in the Eleent panel.
+            but it's still in the Elements panel.
         </pre>
+        <img class="none" src="2d-shape.jpg" />
+        <pre>
+            Background image
+            background-image: url("thumbs-up.png");
+            Add the filename or URL for the image.
+        </pre>
+        <div class="thumbs-up width100 height"></div>
+
+        <pre>
+            Resizing the background image 
+            background-size: 12%
+            One value sets width and height proportionally.
+            Two values sets the width and height indivisually.
+        </pre>
+        <div class="size12 thumbs-up width100 height"></div>
+        <pre>
+            Repeating a background 
+            background-repeat: no-repeat;
+            by default, the background repeats
+        </pre>
+        <div class="no-repeat size12 thumbs-up width100 height"></div>
+
+        <pre>
+            Repeating a background 
+            background-repeat: space; 
+            Repeats the background such that it dosen't get cut off 
+        </pre>
+        <div class="space size12 thumbs-up width100 height"></div>
+
+        <pre>
+            Repeating a background 
+            background-repeat: space no-repeat; 
+            The first value is the horizontal repeat (x)
+            The second value is the vertical repeat (y) 
+            Values are seperated by a space
+         </pre>
+        </div class="repeat-horizontal size12 thumbs-up width100 height">
+        </div>
+
+        <pre>
+            Repeating a background 
+            background-repeat: no-repeat repeat; 
+            The first value is the horizontal repeat (x)
+            The second value is the vertical repeat (y) 
+            Values are seperated by a space
+         </pre>
+        </div class="repeat-vertically size12 thumbs-up width100 height">
+        </div>
+
+
+        <pre>
+            Background positions 
+            background-position: center;
+            The choices are top, bottom, left, right, center
+         </pre>
+        <div class="bg-center no-repeat size12 thumbs-up width100 height"></div>
+
+        <pre>
+            Background positions 
+            background-position: 20% 30%;
+            2 values positions x and y individually
+         </pre>
+        <div class="bg-offcenter no-repeat size12 thumbs-up width100 height"></div>
+
+        <pre>
+             Adding multiple Background image
+            background-image: url("thumbs-up.png");
+            background-image: linear-gradient(white, gray);
+            Add background images to nesting elements.
+            The elements nested deeply will appear in front.
+        </pre>
+        <div class="gradient-basic">
+            <div class="thumbs-up width100 height"></div>
+        </div>
+
+        <div class="gradient-basic height">
+            <pre>
+                Basic gradient
+                background-image: linear-gradient(white, gray);
+
+            </pre>
+        </div>
+
+        <div class="gradient-colors height">
+            <pre>
+                Multiple Colors Gradient
+                background-image: linear-gradient(white, gray, green);
+                Add more colors by seperating them with a comma.
+             </pre>
+        </div>
+
+        <div class="gradient-direction height">
+            <pre>
+           Gradient Directions
+           background-image: linear-gradient(to bottom right, green, white, gray);
+           To change the direction, add to the beginning:
+           to right 
+           to bottom right 
+           to left 
+           to bottom left    
+          </pre>
+        </div>
+
+        <div class="gradient-degree height">
+            <pre>
+              Gradient Degrees
+              background-image: linear-gradient(90deg, white, gray, green);
+              To change the direction, add degree to the beginning:
+              90deg (right)
+              135deg (bottom right)
+              270deg (left)
+              225deg (bottom left)
+            </pre>
+
+        </div class="gradient-stop height">
+        <pre>
+            Gradient Color Stops 
+            background-image: linear-gradient(90deg black, gray 10% 90%, black);
+            2 values next to the middle color sets solid color positions
+            Seperated by spaces
+        </pre>
+        </div>
+
+        <pre class="trancparent green gradient-basic">
+           RGBA
+           color: rgb(6, 68, 0, 0.25);
+           Red Green Blue Alpha
+           Sets the transparency of colors
+           0 alpha is invisible
+           1 alpha is fully visible
+        </pre>
+
+        <pre>
+            Opacity
+            opacity: 0.25;
+            Sets the transparency of elements
+           0 is invisible 
+           1 is fully invisible
+        </pre>
+        <div class="gradient-basic">
+            <img class="opacity25" src="thumbs-up.png" />
+        </div>
+
+        <pre>
+            display:none vs opacity:0 
+            display:none 
+                - makes the element invisible 
+                - removes the element from the browser 
+                - the element is still in the element tree 
+            opacity:0 
+                - makes the element invisible 
+                - dosen't remove the element from the browser  
+                - the element stll will take up space in the browser  
+        </pre>
+        <div class="border border-5 m-1"></div>
+        <div class="none"> Hello World</div>
+        </div>
+        <div class="border border-5 m-1">
+            <div class="opacity0">Hello World</div>
+        </div>
+        <pre>
+            Grouping selector
+            i-green, b-green {
+                color: green;
+            }
+            Seperate elements, classes, or IDs with commas. 
+            The grouping selector applies the style to all of those elements.
+         </pre>
+        <i class="i-green">italic tag</i>
+        <b class="b-green">bold tag</b>
+        <i class="i-green">italic tag</i>
+        <b class="b-green">bold tag</b>
+
+        <pre>
+            Nesting selector
+            i b {
+                color: green;
+            }
+            Select the nested element(s) 
+            Example: &lt;b&gt; is nested in  &lt;i&gt;
+        </pre>
+
+        <i>
+         italic
+         <b>Inside the &lt;i&gt; tag</b>
+         italic
+         <b>bold green</b>
+        </i>
+        <b>Not in the &lt;i&gt; tag</b>
+
+        <pre>
+           Specificity
+           Styling priority
+           1. inline
+           2. id 
+           3. class
+           4. element
+
+           Styles are applied based on their specificity or priority.
+           Styles with lower priority get overwritten.
+           !important overrides them all.
+           !important also goes by load order. 
+           The !important that gets loaded last gets applied.
+        </pre>
+
+        <article style="color: black" class="blue-bold">
+            article with inline style black, id red-italic and class bold-blue
+        </article>
+        <article id="red-italic" class="blue-bold">
+            article with class and id
+        </article>
+        <article class="blue-bold">article with class blue-bold</article>
+        <article class="blue-bold">article with class blue-bold</article>
+        <article>just article</article>
+
+        <pre>
+            Padding shorthand property 
+            padding: 5px 6px 7px 8px 
+            Padding gets applied in a clockwise direction when 4 values are specified.
+    
+            Padding: 10px 20px
+            providing 2 values specifies
+            1. top and bottom 
+            2. left and right
+
+            padding: 10px 20px 30px 
+            providing 3 values specifies 
+            1. top 
+            2. left and right 
+            3.bottom
+        </pre>
+
+        <pre>
+            Margin shorthand property 
+            margin: 5px 6px 7px 8px 
+            Margin gets applied in a clockwise direction when 4 values are specified.
+    
+            Margin: 10px 20px
+            margin 2 values specifies
+            1. top and bottom 
+            2. left and right
+
+            margin: 10px 20px 30px 
+            Margin 3 values specifies 
+            1. top 
+            2. left and right 
+            3.bottom
+         </pre>
+
+        <pre>
+            Box shadow
+            box-shadow: 2px 2px gray;
+            1. x offset 
+            2. y offset 
+            3. color
+        </pre>
+        <span class="box-shadow bg-info m-5">Hello World!</span>
+        <br>
+        <br>
+        <pre>
+            text shadow
+            text-shadow: 1px 1px gray;
+            1. x offset 
+            2. y offset 
+            3. color
+        </pre>
+        <span class="text-shadow m-5">Hello World!</span>
+        </pre>
+        <br>
+        <br>
+        <br>
+
+        <pre>
+            Transformations
+            transform: rotate(20deg);
+            
+        </pre>
+        <button class="rotate btn btn-primary m-5">Click</button>
+
+        <pre>
+            Transformations
+            transform: translate(10px, -10px);
+            
+        </pre>
+        <button class="translate btn btn-primary m-5">Click</button>
+
+        <pre>
+            Transformations
+            transform: scale(2);
+            Decimal values makes the element smaller 
+            Intergers imcrease the size of theelements
+        </pre>
+        <button class="scale btn btn-primary m-5">Click</button>
+
+        <pre>
+            Transformations
+            transform: scale(2) rotate(20deg)
+            Apply multiple transformations seperated by spaces
+        </pre>
+        <button class="scale-rotate btn btn-primary m-5">Click</button>
+
+        <pre>
+            Transitions (anamations)
+            transition: transform 2s;
+            The first value is the style to animate 
+            the second value is the duration of the
+
+            Set an animation for the original state to prevent snap-back
+        </pre>
+        <button class="animation btn btn-primary m-5">Click</button>
     </main>
     <footer></footer>
 </body>
