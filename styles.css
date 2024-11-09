@@ -19,7 +19,11 @@
 }
 
 .size12 {
-    background-size: 12%
+    background-size: 12%;
+}
+
+.repeat {
+    background-repeat: repeat;
 }
 
 .no-repeat {
@@ -168,7 +172,7 @@ article {
     transition: transform 2s;
 }
 
-.animation: {
+.animation {
     transform: scale(1) rotate(20deg);
     transition: transform 2s;
 }

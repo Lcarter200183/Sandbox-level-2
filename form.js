@@ -1,5 +1,14 @@
+function display(message) {
+    debugger;
+    document.write(message);
+}
+
+function outputessage(message) {
+    outputTag.innerHtml = message;
+}
+
 function myProcessForm(event) {
-    document.write("Form Processed")
+    document.write("Form Processed");
 
 
     event.prevent(); // this prevent page from refreshing after submitting a form.
@@ -7,12 +16,12 @@ function myProcessForm(event) {
     const form = event.target;
     const input = form[0];
     const value = input.value;
-    output(`Your password is${value}.<br>`);
+    output(`Your password is${value}.<br>`)
 }
 
 
 function myProcessForm(event) {
-    document.write("Form Processed")
+    document.write("Form Processed");
 
 
     const form = event.target;

@@ -1,14 +1,72 @@
+// CUSTOM COLORS
+$darkGreen: rgba(0, 95, 0, 1);
+$lightBlue: rgba(70, 70, 255, 1);
+$darkRed: rgba(140, 0, 0, 1);
+// CUSTOM FONTS
+$primaryFont: "SnowtopCaps";
+$secondaryFont: fantasy;
+//MIXINS
+@mixin redtext {
+    color: red;
+}
+
+@mixin boxShadow {
+    box-shadow: 5px 5px gray;
+}
+
+@mixin textshadow {
+    text-shadow: 3px 3px rgb(67, 67, 67);
+}
+
+@mixin anamation {}
+
+p {
+    @include redText;
+}
+
+#mixin-example {
+    @include boxShadow;
+    @include textShadow;
+}
+
+mixin-button {
+    transform: scale(1) rotate(0deg);
+    transition: transform 1s;
+}
+
+#mixin-button:hover {
+    transform: scale(2) rotate(15deg);
+    transition: transform 2s;
+}
+
+@font-face {
+    font-family: "Snowtop Caps";
+    src: url("SnowtopCaps.otf")
+}
+
+main {
+    font-family: "Snowtop Caps";
+}
+
+footer {
+    font-family: $secondaryFont;
+}
+
 h1 {
-    color: green;
+    color: $darkGreen;
+    width: fit-content;
+    &:hover {
+        color: $darkRed;
+    }
 }
 
 p b {
-    color: blue;
+    color: $lightBlue;
 }
 
 pre {
     code {
-        color: red;
+        color: $darkRed;
     }
 }
 
@@ -19,10 +77,19 @@ pre {
     }
 }
 
-$thumbsUp: url("thumbs-up");
+$thumbsUp: url("thumbs-up.png");
+.bg-image {
+    background-image: $thumbsUp;
+}
+
+$horizontalRepeat: space no-repeat;
 .horizontalRepeat {
-    background-image: url("thumbs-up.png");
-    background-size: 5%;
+    background-repeat: $horizontalRepeat;
+}
+
+$verticalRepeat: no-repeat repeat;
+.verticalRepeat {
+    background-repeat: $verticalRepeat;
 }
 
 .width {
@@ -31,4 +98,29 @@ $thumbsUp: url("thumbs-up");
 
 .height {
     height: 200px;
+}
+
+.size7 {
+    background-size: 7%;
+}
+
+.size50 {
+    background-size: 50%
+}
+
+$stretch: 25% 100%;
+.stretch {
+    background-size: $stretch
+}
+
+$darkGradient: linear-gradient(90deg,
+gray,
+black 10% 90%,
+gray);
+$lightGradient: linear-gradient(90deg,
+gray,
+white 10% 90%,
+gray);
+.gradient {
+    background-image: $lightGradient;
 }

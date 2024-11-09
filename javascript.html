@@ -21,13 +21,17 @@
             A function that dosen't have parameters.
             It's only purpose is to call a functionwith parameters.
             
+            Experiment Test: 
+            A value can be sent to function without parameter. 
+            Add a paremeter to the function to acess the value. 
             <button onclick="greeting()">Activate me!</button>
+            <button onclick="activatorTest('Hello World')">Activator test</button>
         </pre>
 
         <pre>
         <button onclick=""></button>
        
-        </pre>
+        </pre> Callback fa-function "></i>
 
 
         <pre>
@@ -104,6 +108,7 @@
 
         <pre>
           Javascript 
+          ------------------------------
           <code>
             class MyCar {
                 color ="red";
@@ -112,7 +117,7 @@
           </code>
           A JavaScript class is like a template. 
           It predefines an object without creating it.
-          Usually created towards the top od a JavaScript file
+          Usually created towards the top of a JavaScript file
 
           Syntax: 
           1. Keyword <code>class</code> 
@@ -154,7 +159,7 @@
                     year: 2024,
                 };
              </code>
-             Directly displayig a class shows its code.
+             Directly displaying a class shows its code.
              In developer tools, a class has a name and length. 
              The JavaScript class is different from a JavaScript object.
              The syntax of a class is different than an object. 
@@ -174,7 +179,7 @@
                 myCar3.year = 2025;
 
              </code>
-             The Objects start with the properties and values defined by the class. 
+             The objects start with the properties and values defined by the class. 
              The objects are independent.
               - The values of their properties can be changed individually.
              Syntax: 
@@ -185,6 +190,69 @@
 
              <button onclick="newObject">Create Object from class</button>
              </pre>
+
+        <pre>
+             function in a function (nested function) 
+             ---------------------------------------------------
+             <code>
+                function outerFunction() {
+                    const message = "Hello World";
+                } 
+                
+                function innerFunction() {
+                   display(message);
+                }
+
+             </code>
+             Functions can be defined in other functions. 
+             The inner function has access to variables in the outer function.  
+             the inner function only runs when it's activated.
+             <button onclick="nestedfunction">Nested function</button>
+        
+            </pre>
+
+        <pre>
+             Promise 
+             ---------------------------------------------------
+             <code>
+               const results = new Promise(myFunction); 
+             </code>
+               A special class that runs a calback function. 
+               The object indicates the status of the callback function. 
+               A promise is not asyncronous. It immediately runs the callback function. 
+               Status shows pending, even after myFunction has finished.
+               The status must be mannually changed. 
+               The callback function must indicate when it has finished.
+               The Promise Sends a callback function to a callback function
+               That callback function of the callback function 
+              
+               <button onclick="makePromise()">Make Promise</button>
+             
+            </pre>
+
+        <pre>
+            Promise function 
+            --------------------------------------------------------
+            <code>
+
+            </code>
+             Use an inner function to give access to a resolved function
+        </pre>
+
+        <pre>
+            promise then function 
+            ------------------------------------------
+             <code>
+                promise.then(getMessage);
+             </code>
+             The then function runs when the callback function 
+        </pre>
+
+        <pre>
+            Resolve value 
+            -----------------------------------------------
+
+        </pre>
 
     </main>
     <footer></footer>

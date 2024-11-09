@@ -46,3 +46,32 @@ function activator() {
     debugger;
     myFunction(greeting);
 }
+
+function myFunction(callbackFunction) {
+    display("Inside myFunction");
+    myParameter;
+}
+
+function makePromise() {
+    debugger;
+    const promise = new Promise(myFunction);
+    display("Made a promise.");
+}
+ddebugger;
+
+function activatorTest(myParameter) {
+    display("myParameter")
+}
+
+
+
+
+
+
+function outerFunction() {
+    const message = "Hello World";
+}
+
+function innerFunction() {
+    display(message);
+}

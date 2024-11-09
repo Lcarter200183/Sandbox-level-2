@@ -3,13 +3,14 @@
 
 <head>
     <title>SASS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="sass.css" rel="stylesheet" />
 </head>
 
 <body>
     <header></header>
     <main>
-        <h1>SASS</h1>
+        <h1>SASS</h1>hello WorldS
         <p>Syntactically <b>Awesome</b>Stylesheet</p>
 
         <pre>SASS <code>nesting</code> syntax
@@ -28,7 +29,7 @@
            pre {
               i {
                 color: $myColor;
-                 }
+              }
             }
            SASS variable starts with $
            Use colon to store a value 
@@ -36,12 +37,174 @@
         </pre>
 
         <pre>
-           Horizontal repeat variable
+           Background image variable
+           ------------------------------------
+            $thumbsUp: url("thumbs-up.png");
+            .bg-image {
+                background-image $thumbsUp;
+            }
         </pre>
-        <div class="horizontalRepeat width height">Hello World!</div>
+        <div class="bg-image size50 width height"></div>
+        <pre>
+            Horizontal repeat variable 
+            ------------------------------------
+             $horizontal-repeat: space no-repeat; 
+             .horizontalRepeat { 
+                background-repeat: $horizontalRepeat; 
+            }
+
+            </pre>
+        <div class="horizontalRepeat bg-image size7 width height"></div>
+
+        <pre>
+            Vertical repeat variable 
+            ------------------------------------------
+            $verticalRepeat: no-repeat repeat;
+            .verticalRepeat {
+                background-repeat: $verticalRepeat;
+            }
+        </pre>
+        <div class="verticalRepeat bg-image size7 width height"></div>
+
+        <pre>
+           Background size variable 
+           --------------------------------------------
+           $stretch: 25% 100%;
+           .stretch {
+               background-size: $stretch
+           }
+        </pre>
+        <div class="stretch bg-image width height"></div>
+
+        <div class="gradient width height">
+            <pre>
+            Gradient variables 
+            --------------------------------------------- 
+            $darkGradient: linear-gradient(90deg, gray, black 10% 90%, gray);
+            $lightGradient: linear-gradient(90deg, gray, white 10% 90%, gray);
+            .gradient {
+                background-image: $lightGradient;
+            }
+        </pre>
+        </div>
+
+        <pre>
+            RGBA color variables 
+            -------------------------------------
+            $darkGreen: rgba(0, 95, 0, 1);
+            $lightBlue: rgba(70, 70, 255, 1);
+            $darkRed: rgba(140, 0, 0, 1);
+
+            Declare the color variables all in one area, towards the top.  
+            Use them throughout the SASS file. 
+            Define/declare variables before using them.
+            Changing the value of the variable affects the whole file. 
+            Single source of truth - changing 1 thing changes them all.
+            There's only one place where a specific piece of data is stored.
+            An update to the data also updates all related data. 
+            It makes the code more consistant.
+            It makes it easier to update.
+        </pre>
+
+        <pre>
+            Single line comments 
+            -------------------------------------------
+            // CUSTOM COLORS 
+            SASS supports single line comments like JavaScript.
+        </pre>
+
+        <pre>
+            Adjust width to automatically fit content
+            ------------------------------------------
+            <code>width: fit-content;</code>
+            Useful on block elements. 
+            Block elements will still use a whole line. 
+            But the hit  box of the block element is reduced. 
+            Compared it to <code>display:inlind</code>, which lines up the elements.
+        </pre>
+
+        <pre>
+            Parent Syntax
+            --------------------------------------------------- 
+            <code>
+            h1 {
+                color: $darkGreen;
+                width: fit-content;
+                &:hover {
+                    color: $darkRed;
+                }
+            }
+            </code>
+            Groups styles together under the parent selector. 
+            Use <code>&</code> to substitute for the parent.
+            Any style belonging to the parent will be passed to the child styles. 
+        </pre>
+
+        <pre>
+            Font variables 
+            --------------------------------------------- 
+            <code>
+            $primaryFont: sans-serif;
+            $secondaryFont: fantasy;
+           </code>
+           Use variables to store fonts.
+
+        </pre>
+
+        <pre>
+            Adding fonts 
+            ----------------------------------------------
+            <code>
+                font-face {
+                    font-family: "SnowtopCaps";
+                    src: url("SnowtopCaps.otf")
+                }
+                main {
+                    font-family: "SnowtopCaps";
+                }
+            </code> 
+
+            1. Download the font https://dafont.com 
+            2. If the font is in a .zip move the font out to a root folder.
+            3. Use <code>@font-face</code> to add the font. 
+            4. Use <code>font-family</code> to name the font. 
+            5. Use <code>src: url()</code> to link the font file.
+            6. Use the font name.
+        </pre>
+
+        <pre>
+            SASS mixins - single line 
+            ---------------------------------------- 
+            <code>
+                @mixin redtext {
+                    color: red;
+                }
+                p {
+                    @include redText;
+                }
+            </code>
+            Like variables.  
+            Single-linemixins store a property and value.
+            Type <code>@mixin</code> to declare/define a mixin variable.
+            Type <code>@include</code> to use the mixin.
+            Mixins can substitute for utility classes so elements can be described by their name.
+
+        </pre>
+        <p>This is a paragraph</p>
+        <span class="bg-primary p-3" id="mixin-example">Hello World</span>
+        <br />
+        <br />
+        <button class="btn btn-sucess" id="mixin-button">Click</button>
+
+        <pre>
+
+
+
+        </pre>
+
 
     </main>
-    <footer></footer>
+    <footer>Hello footer</footer>
 </body>
 
 </html>
