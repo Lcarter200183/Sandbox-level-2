@@ -56,7 +56,7 @@ The accessibility tree:
 10. `<dialog>`
     - Use this for a box or window that can be opened or closed.
     - Example: Bootstrap alert 
-    - Use the open attribute to show the `<dialog>` content.10.10.
+    - Use the open attribute to show the `<dialog>` 
 11.  `<output>`
      - Use this for the result of a calculation or showing feedback.
      - Example: The form has been successfully submitted.

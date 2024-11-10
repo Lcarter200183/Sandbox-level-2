@@ -19,9 +19,9 @@
                 }
             </code>
             A function that dosen't have parameters.
-            It's only purpose is to call a functionwith parameters.
+            It's only purpose is to call a function with parameters.
             
-            Experiment Test: 
+            Test result: 
             A value can be sent to function without parameter. 
             Add a paremeter to the function to acess the value. 
             <button onclick="greeting()">Activate me!</button>
@@ -29,17 +29,37 @@
         </pre>
 
         <pre>
-        <button onclick=""></button>
-       
-        </pre> Callback fa-function "></i>
+         Callback function 
+        -------------------------------------------------------
+           <code>
+            function myFundtion(callbackFunction) {
+                callbackFunction();
+            }
+            function activator() {
+                myFunction(greeting);
+            }
+            activator();
 
 
-        <pre>
+
+           </code>
+
+    
             
          <button onclick=""></button>
            
-        </pre> Asynchronous ----------------------------------- function asynchronous() { display("Waiting for the greeting...") } Able to run other code while waiting for some code to respond. Like multitasking. Other code runs immediately after
-        setTimeout The greeting function runs after other code.
+        </pre>
+
+        <pre>
+         Asynchronous 
+         ----------------------------------- 
+         function asynchronous() { 
+            display("Waiting for the greeting...") 
+            } 
+         Able to run other code while waiting for some code to respond.
+         Like multitasking.
+         Other code runs immediately after setTimeout 
+         The greeting function runs after other code.
 
         <button onclick="">Delayed greeting</button>
 
@@ -97,7 +117,8 @@
             </code>
          Generates a string from an object. 
          Need to store result. 
-         JSON - JavaScript Object Notation Servers communicate with stringify objects The syntax we ose to represent objects. 
+         JSON - JavaScript Object Notation 
+         Servers communicate with stringify objects The syntax we ose to represent objects. 
            - Curly braces represent an object. 
            - Properties are seperated by a comma 
            - Properties in quotes 
@@ -206,10 +227,12 @@
              </code>
              Functions can be defined in other functions. 
              The inner function has access to variables in the outer function.  
-             the inner function only runs when it's activated.
+             Function scope (local scope) gives access to the variables.
+             The inner function only runs when it's activated.
+             
              <button onclick="nestedfunction">Nested function</button>
         
-            </pre>
+         </pre>
 
         <pre>
              Promise 
@@ -220,7 +243,6 @@
                A special class that runs a calback function. 
                The object indicates the status of the callback function. 
                A promise is not asyncronous. It immediately runs the callback function. 
-               Status shows pending, even after myFunction has finished.
                The status must be mannually changed. 
                The callback function must indicate when it has finished.
                The Promise Sends a callback function to a callback function
@@ -234,24 +256,100 @@
             Promise function 
             --------------------------------------------------------
             <code>
+              function serverRespnose() {
+                setTimeout(serverResponse2, 5000);
+                display("Inside my myfunction");
+
+                function serverResponse2() {
+                    display("Form was sucessfully processed.");
+                }
+              }  
+
 
             </code>
              Use an inner function to give access to a resolved function
         </pre>
 
         <pre>
-            promise then function 
+            The then function 
             ------------------------------------------
              <code>
                 promise.then(getMessage);
+                   
+                Function getMessage(resolveValue) {
+                    display(resolveValue);
+                }
              </code>
-             The then function runs when the callback function 
+             The then function runs when the callback function when the promise is resolved (fulfilled)
+             The callback function has access to the resolve value.
         </pre>
 
         <pre>
-            Resolve value 
+            Resolve function and resolve value 
             -----------------------------------------------
+            <code>
+             resolve("The promise is fulfilled.");   
+            </code>
+             The resolve function is a callback function.
+             It is passed to the function that is given to the Promise. 
+             It indicates that the Promise is fulfilled. 
+             The resolve function is meant to be used by assychronous code. 
+             The resolve value gets passed to the callback ofthe then function.
 
+        </pre>
+        <pre>
+            Method 
+            -----------------------------------------------
+           <code>
+            promise.then(getMessage);
+            document .write("Hello world!");
+           </code>
+            A method is a function that's part of an object.
+
+
+        </pre>
+
+        <pre>
+            Handler 
+            ------------------------------------------
+            <code>
+              onsubmit="submitForm(event)"
+            </code>
+            A handler is a function that runs in response to an event.
+            Another example is <code>onclick</code> which can run a function response to an event.
+            Example event:
+            1. When a form is submitted 
+            2. When a button is clicked. 
+        </pre>
+
+        <pre>
+           Handler naming  convention 
+           -----------------------------------------------
+           <code>
+            onsubmit="handleSubmit(event)"
+            onclick="handleClick(event)"
+          </code>
+           A handler function usually starts with <code>handle</code>
+        </pre>
+
+        <pre>
+           Server Simulation with Promise 
+           ----------------------------------------------
+           <form onsubmit="handleSubmit(event)">
+            <label for="email">Email</label>
+            <input type="email"id="email" name="email" required />
+            <input type="submit" />
+           </form>
+        </pre>
+
+        <pre>
+            JSON Parse 
+            -------------------------------------------------- 
+            <code>
+                const response = JSON.parse(resolveValue);
+             </code>
+            Parse: Analyze the data and convert it ot a usable format.
+            <code>JSON.parse</code> converts a string into an object.
         </pre>
 
     </main>

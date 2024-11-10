@@ -6,11 +6,11 @@ $darkRed: rgba(140, 0, 0, 1);
 $primaryFont: "SnowtopCaps";
 $secondaryFont: fantasy;
 //MIXINS
-@mixin redtext {
+@mixin redText {
     color: red;
 }
 
-@mixin boxShadow {
+@mixin box-shadow {
     box-shadow: 5px 5px gray;
 }
 
@@ -39,13 +39,17 @@ mixin-button {
     transition: transform 2s;
 }
 
+.box-shadow {
+    @include boxShadow;
+}
+
 @font-face {
-    font-family: "Snowtop Caps";
+    font-family: "SnowtopCaps";
     src: url("SnowtopCaps.otf")
 }
 
 main {
-    font-family: "Snowtop Caps";
+    font-family: "SnowtopCaps";
 }
 
 footer {
