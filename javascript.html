@@ -14,157 +14,130 @@
             Activator function 
             ------------------------
             <code>
-                function greeting() {
-                    display("Hello world!");
-                }
-            </code>
+            function greeting() {
+                display("Hello World!");
+            }  
+            
+             </code>
             A function that dosen't have parameters.
             It's only purpose is to call a function with parameters.
             
             Test result: 
             A value can be sent to function without parameter. 
             Add a paremeter to the function to acess the value. 
+            
             <button onclick="greeting()">Activate me!</button>
-            <button onclick="activatorTest('Hello World')">Activator test</button>
+            <button onclick="activatorTest('Hello World!')">Activator test</button>
         </pre>
 
         <pre>
-         Callback function 
-        -------------------------------------------------------
-           <code>
-            function myFundtion(callbackFunction) {
+            Callback function 
+            -------------------------------------------------------
+            <code>
+            function myFunction(callbackFunction) {
                 callbackFunction();
             }
             function activator() {
                 myFunction(greeting);
-            }
+            }  
             activator();
+             </code>
+            A function that is passed as a parameter.
+            A function can be passed to another function. 
+            The function can run that function.
 
-
-
-           </code>
-
-    
-            
-         <button onclick=""></button>
+            <button onclick="activator()">Activate me!</button>
            
         </pre>
 
         <pre>
-         Asynchronous 
-         ----------------------------------- 
-         function asynchronous() { 
-            display("Waiting for the greeting...") 
-            } 
-         Able to run other code while waiting for some code to respond.
-         Like multitasking.
-         Other code runs immediately after setTimeout 
-         The greeting function runs after other code.
+            setTimeout
+            ---------------------------------------------------
+            <code>
+            setTimeout(greeting, 5000);
+            </code>
+            A function that calls a function after a specified time. It accepts a function and a delay time in milliseconds.
 
-        <button onclick="">Delayed greeting</button>
+            <button onclick="delayedGreeting()">Delayed greeting</button>
+         </pre>
 
+        <pre>
+            Asynchronous 
+            ----------------------------------- 
+            <code>
+            function asynchronous() {
+                setTimeout(greeting, 5000);
+                display("Waiting for the greeting...");
+            }
+            </code>
+             Able to run other code while waiting for some code to respond.
+             Like multitasking.
+             Other code runs immediately after <code>setTimeout</code>.  
+             The greeting function runs after other code.
+
+             <button onclick="asynchronous()">Delayed greeting</button>
         </pre>
 
         <pre>
             server stimulation
-
-
-
-
-         <button onclick=""></button>   
+            -----------------------------------------------
+            A server takes time to rrespond. 
+            Use asychronous code to simulate it.
+            <form onsubmit="submitForm(event)">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required /><br>
+                <input type="submit" />
+            </form>
         </pre>
 
         <pre>
-
-        </pre>
-
-        <pre>
-
-
-        </pre>
-
-        <pre>
-
-        </pre>
-
-
-        <pre>
-        <code>    
-
-         </code>
-         A server takes time to respond.   
-         Use asynchronous code to simulate it. 
-         <form onsubmit="submitForm(event)">
-         <label for="email">Email:</label><br> 
-         <input type="email" id="email" name="email" required <br>
-         <input type="submit" />
-         </form>
-         </pre>
-
-        <pre>
-             Json stringify 
-             ----------------------------------
-             <code> 
-             function displayObject() {
-                const myCar = {
-                    color: "red",
-                    year: 2024,
-                }
-                const result = JSON.stringify(myCar);
-                display(result);
-             }
-         
-            </code>
-         Generates a string from an object. 
-         Need to store result. 
-         JSON - JavaScript Object Notation 
-         Servers communicate with stringify objects The syntax we ose to represent objects. 
-           - Curly braces represent an object. 
-           - Properties are seperated by a comma 
-           - Properties in quotes 
-           - Values are set with colon
-
-         <button onclick="displayObject()">Display Object</button>
-         </pre>
-
-        <pre>
-          Javascript 
-          ------------------------------
-          <code>
-            class MyCar {
-                color ="red";
-                year =2024;
+            Json stringify 
+            ----------------------------------
+            <code> 
+            function displayObject() {
+               const myCar = {
+                   color: "red",
+                   year: 2024,
+               }
+               const result = JSON.stringify(myCar);
+               display(result);
             }
-          </code>
-          A JavaScript class is like a template. 
-          It predefines an object without creating it.
-          Usually created towards the top of a JavaScript file
+        
+           </code>
+            Generates a string from an object. 
+            Need to store result. 
+            JSON - JavaScript Object Notation 
+            Servers communicate with stringify objects 
+            The syntax we use to represent objects. 
+                - Curly braces represent an object. 
+                - Properties are seperated by a comma 
+                - Properties are in quotes 
+                - Values are set with a colon
 
-          Syntax: 
-          1. Keyword <code>class</code> 
-          2. Class name, usually in PascalCase 
-             - PascalCase is like camelCase, but starts with a capital.
-          3. Curly braces 
-          4. Assign properties their values 
-             - Use equal signs and semi-colons
-         </pre>
+            <button onclick="displayObject()">Display object</button>
+        </pre>
 
+        <pre>
+             Javascript class
+            ------------------------------
+            <code>
+                class MyCar {
+                    color = "red";
+                    year = 2024;
+                }
+            </code>
+            A JavaScript class is like a template. 
+            It predefines an object without creating it.
+            Usually created towards the top of a JavaScript file
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            Syntax: 
+            1. Keyword <code>class</code> 
+            2. Class name, usually in PascalCase 
+                - PascalCase is like camelCase, but starts with a capital.
+            3. Curly braces 
+            4. Assign properties their values 
+                - Use equal signs and semi-colons
+        </pre>
 
         <pre>
             JavaScript class vs object 
@@ -185,7 +158,7 @@
              The JavaScript class is different from a JavaScript object.
              The syntax of a class is different than an object. 
 
-             <button onclick="classVsObject()"></button>
+             <button onclick="classVsObject()">class vs object</button>
              </pre>
 
         <pre>
@@ -209,7 +182,7 @@
              3. Store the value 
                 - the value is an object created from the class
 
-             <button onclick="newObject">Create Object from class</button>
+             <button onclick="newObject()">Create Object from class</button>
              </pre>
 
         <pre>
@@ -218,12 +191,12 @@
              <code>
                 function outerFunction() {
                     const message = "Hello World";
-                } 
+                    innerFunction();
                 
-                function innerFunction() {
-                   display(message);
+                    function innerFunction() {
+                    display(message);
+                    }
                 }
-
              </code>
              Functions can be defined in other functions. 
              The inner function has access to variables in the outer function.  
@@ -235,39 +208,45 @@
          </pre>
 
         <pre>
-             Promise 
+                  Promise 
              ---------------------------------------------------
              <code>
                const results = new Promise(myFunction); 
+               promise.then(getMessage);
              </code>
                A special class that runs a calback function. 
                The object indicates the status of the callback function. 
                A promise is not asyncronous. It immediately runs the callback function. 
                The status must be mannually changed. 
                The callback function must indicate when it has finished.
-               The Promise Sends a callback function to a callback function
-               That callback function of the callback function 
+               The Promise Sends a callback function to <code>myFunction</code>.
+               That callback function to <code>myFunction</code> indicates that the Promise is fulfilled.
+               That Callback function is known as the <code>resolve</code> function.
+                A promise is meant to be used by asychronous code.
+               The asychronous code is supposed <code>resolve</code> to indicate when it's done.
+              
               
                <button onclick="makePromise()">Make Promise</button>
-             
+               
             </pre>
 
         <pre>
             Promise function 
-            --------------------------------------------------------
+             --------------------------------------------------------
             <code>
-              function serverRespnose() {
+            function myFunction(resolve) { 
                 setTimeout(serverResponse2, 5000);
-                display("Inside my myfunction");
-
+                display("Inside my myFunction");
+            
                 function serverResponse2() {
-                    display("Form was sucessfully processed.");
+                    display("Form was successfully processed.");
+                    resolve();
                 }
-              }  
-
-
+            }
             </code>
-             Use an inner function to give access to a resolved function
+             The parameter<code>resolve</code>  is a callback function.
+             It is passed from function. that is given to the Promise.
+             Use an inner function to give access to a resolve function.
         </pre>
 
         <pre>
@@ -293,9 +272,26 @@
              The resolve function is a callback function.
              It is passed to the function that is given to the Promise. 
              It indicates that the Promise is fulfilled. 
-             The resolve function is meant to be used by assychronous code. 
-             The resolve value gets passed to the callback ofthe then function.
+             The resolve function is meant to be used by asynchronous code. 
+             The resolve value gets passed to the callback of the<code>then</code> function.
 
+        </pre>
+
+        <pre>
+            Promise - Best practices 
+            ------------------------------------------ 
+            <code>
+                const promise = makeResquest"("https://myserver.com")
+                function makeRequest(url) {
+                    const promise = new Promise(getServerResponse);
+                    const promise = makeRequest("https://myserver.com")
+                    return promise;
+                }
+
+            </code>
+            A promise is usually the return value of a function.
+            Communication with a server is called a request.
+            Server communication is established with a url.
         </pre>
         <pre>
             Method 
@@ -340,6 +336,8 @@
             <input type="email"id="email" name="email" required />
             <input type="submit" />
            </form>
+          
+
         </pre>
 
         <pre>
@@ -349,7 +347,9 @@
                 const response = JSON.parse(resolveValue);
              </code>
             Parse: Analyze the data and convert it ot a usable format.
-            <code>JSON.parse</code> converts a string into an object.
+            <code>JSON.parse</code> converts a string into an object
+            A stringified  object is not usable format.
+            The object is a usable format.
         </pre>
 
     </main>

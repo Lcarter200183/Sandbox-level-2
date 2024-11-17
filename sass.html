@@ -9,19 +9,19 @@
 
 <body class="container">
     <header></header>
-    <main>
-        <h1>SASS</h1>hello WorldS
+    <main class="container">
+        <h1>SASS</h1>hello World!
         <p>Syntactically <b>Awesome</b> Stylesheet</p>
 
         <pre>SASS <code>nesting</code> syntax
-        pre {
-            code {
-                color: red;
-            }
-        }
-        A style can be nested in another style to select  a nested element.
-        The code tag in the pre tag is styled.
-        </pre>
+          pre {
+              code {
+                 color: red;
+             }
+          }
+          A style can be nested in another style to select  a nested element.
+          The code tag in the pre tag is styled.
+          </pre>
 
         <pre>
            SASS <i>variable</i> syntax
@@ -34,7 +34,7 @@
            SASS variable starts with $
            Use colon to store a value 
            Use the variable name to acess the value
-        </pre>
+          </pre>
 
         <pre>
            Background image variable
@@ -43,7 +43,7 @@
             .bg-image {
                 background-image $thumbsUp;
             }
-        </pre>
+         </pre>
         <div class="bg-image size50 width height"></div>
         <pre>
             Horizontal repeat variable 
@@ -63,7 +63,7 @@
             .verticalRepeat {
                 background-repeat: $verticalRepeat;
             }
-        </pre>
+          </pre>
         <div class="verticalRepeat bg-image size7 width height"></div>
 
         <pre>
@@ -73,7 +73,7 @@
            .stretch {
                background-size: $stretch
            }
-        </pre>
+          </pre>
         <div class="stretch bg-image width height"></div>
 
         <div class="gradient width height">
@@ -85,7 +85,7 @@
             .gradient {
                 background-image: $lightGradient;
             }
-        </pre>
+          </pre>
         </div>
 
         <pre>
@@ -104,14 +104,14 @@
             An update to the data also updates all related data. 
             It makes the code more consistant.
             It makes it easier to update.
-        </pre>
+          </pre>
 
         <pre>
             Single line comments 
             -------------------------------------------
             // CUSTOM COLORS 
             SASS supports single line comments like JavaScript.
-        </pre>
+          </pre>
 
         <pre>
             Adjust width to automatically fit content
@@ -120,8 +120,8 @@
             Useful on block elements. 
             Block elements will still use a whole line. 
             But the hit box of the block element is reduced. 
-            Compared it to <code>display:inlind</code>, which lines up the elements.
-        </pre>
+            Compared it to <code>display:inline</code>, which lines up the elements.
+          </pre>
 
         <pre>
             Parent Syntax
@@ -138,7 +138,7 @@
             Groups styles together under the parent selector. 
             Use <code>&</code> to substitute for the parent.
             Any style belonging to the parent will be passed to the child styles. 
-        </pre>
+          </pre>
 
         <pre>
             Font variables 
@@ -149,7 +149,7 @@
            </code>
            Use variables to store fonts.
 
-        </pre>
+          </pre>
 
         <pre>
             Adding fonts 
@@ -170,7 +170,7 @@
             4. Use <code>font-family</code> to name the font. 
             5. Use <code>src: url()</code> to link the font file.
             6. Use the font name.
-        </pre>
+         </pre>
 
         <pre>
             SASS mixins - single line 
@@ -188,19 +188,64 @@
             Type <code>@mixin</code> to declare/define a mixin variable.
             Type <code>@include</code> to use the mixin.
             Mixins can substitute for utility classes so elements can be described by their name.
-        </pre>
+           </pre>
         <p>This is a paragraph</p>
-        <span>Hello world!</span>
-        <br />
-        <br />
-        <button class="btn btn-sucess" id="mixin-button">Click</button>
+
 
         <pre>
+             using multiple mixins 
+             ---------------------------------------------------
+             <code>
+                #mixin-example {
+                    @include boxShadow;
+                    @include textShadow;
+                }
 
+             </code>
+              use @include for each mixin
+              </pre>
 
+        <span class="bg-primary p-3" id="mixin-example">Hello world!</span>
+        <br>
+        <br> SASS mixins - multi line ----------------------------------------
 
+        <code>
+                @mixin animation1 {
+                    transform: scale(1) rotate(0deg);
+                    transition: transform 1s;
+                }
+                #mixin-button {
+                    @include animation1;
+                }
+                 </code> multi-line mixin store multiple properties and values.
         </pre>
 
+        <button class="btn btn-success" id="mixin-button">Click!</button>
+
+        <pre>
+                SASS mixin - all in one 
+                ---------------------------------------------------
+                 <code>
+                @mixin animation {
+                    transform: scale(1) rotate(0deg);
+                    transition: transform 1s;
+                &:hover {
+                    transform: scale(0.5) rotate(-15deg);
+                    transition: transform 2s;
+                }
+              }
+                #animated-button {
+                    @include animation;
+              }
+              </code>
+               The all in one mixin includes animation1 and animation2. 
+               Parent syntax is used. 
+               This mixin can be used in any element to animate it.
+                </pre>
+
+        <button class="btn btn-primary" id="animated-button">Hello!</button>
+
+        <h2 class="bg-warning" id="subtitle">Here's an h2</h2>
 
     </main>
     <footer>Hello footer</footer>

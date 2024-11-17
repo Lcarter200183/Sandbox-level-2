@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="utility-function.js"></script>
+    <script src="api.js"></script>
+    <link rel="stylesheet" href="api.css" />
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <pre>
+            REST API 
+            ----------------------------------------------------
+            <img src="api-illustration.jpg" />
+            Rest: Representational State Transfer 
+            API: Application Programming Interface 
+            A set of rules for communicating with the server. 
+            The URL to connect with the server must be properly formed.
+             
+            1. Client : Makes a request according to the REAT API rules (menu). 
+            2. REST API: Sends the request in a way the server understands.
+            3. Server: Processes the request. 
+            4. REST API: Delivers the response (stringified object).
+        </pre>
+
+        <pre>
+            REST API Analogy 
+            -------------------------------------------------------
+            <img src="api-analogy.jpg" />
+            1. Customer: Requests a meat from the menue.
+            2. Waiter: Writes the request in a way the chef understands. 
+            3. Chef: Processes the request by cooking the meal.
+            4. Waiter: Responds by delevering the meal.
+        </pre>
+
+        <pre>
+            Trivia API 
+            ---------------------------------------------- 
+    
+            <button onclick="handleClick(event)">Trivia</button>
+         </pre>
+        <div id=outputTag></div>
+
+        <pre>
+            Fetch function 
+            ----------------------------------------------
+            <code>
+            const promise = fetch("https://opentdb.com/api.php?amount=1");
+            </code>
+            Sends a request to the URL of the REST API 
+            Return promise 
+            Its resolve value is not a stringified object. 
+            The resolve value is a special object created by the fetch function. 
+            There's an extra step to access the response from the REST API.
+
+        </pre>
+
+        <pre>
+            The Text method 
+            -------------------------------------------------- 
+            <code>
+              const promise = resolveValue.test(); //fetch object
+            </code>
+            Retrieves the stringified object from the fetch object. 
+            Returns a promise.
+        </pre>
+
+        <pre>
+            Extracting the data 
+            --------------------------------------------------
+            <code> 
+                const response = JSON.parse(resolveValue);
+                const results = response.results;
+                const item = results[0];
+                const question = item.question;
+                const answer = item.correct_answer;
+                const incorrects = item.incorrect_answer;
+              </code>
+              Store each property one level at a time until you get the data you read.
+
+        </pre>
+
+        <pre>
+            Displaying the data
+            ------------------------------------------
+           <code> 
+            output(trivia);
+           </code>
+           1. Create sample HTML of trivia question and it's answers. 
+           2. Converted it to a templet string.
+                 - putting backticks around it 
+                 - store it in variables
+                 - move it to the javascript file 
+           3. Replaced with variables. 
+           4. Output to a HTML element 
+        </pre>
+
+        <div>
+            How many planets are in the solar stsyem?
+            <ol type="a">
+                <li>Nine</li>
+                <li>Seven</li>
+                <li>Ten</li>
+                <li>Eight</li>
+            </ol>
+        </div>
+
+        <pre>
+          Specifing the data 
+          --------------------------------------------------
+          <code>
+            https://opentdb.com/api.php?amount=2 
+            https://opentdb.com/api_catagory_php
+          </code>
+           The REST Api documentation teaches how to form the URL to request specific data.
+           Specify <code>amount</code> to get multiple questions. 
+           Get a list of catergories.
+           Use a slightly different URL to see a list of catergories anf their ID 
+           Use the API helper to properly form a URL based on specifications 
+           Paste the URL into the fetch function
+        </pre>
+
+        <pre>
+            Postman
+            ---------------------------------------------------- 
+            An application for trying out and testing REST API.
+            The icon at the bottom left closes the History panel
+            The icon at the bottom right splits the panels vertically
+            
+        </pre>
+
+        <pre>
+           Base URL 
+           -------------------------------------------------------
+           The URL where the REST API is located
+        </pre>
+
+        <pre>
+            Key value pairs
+            ----------------------------------------------
+            . They specify the data we want to request
+            . Key is on left, value is on the right 
+            . They are appended to the base URL
+            . Start with ?
+            . Connected with = and separated by &
+        </pre>
+
+        <pre>
+            FavQ's - favorite quotes
+            --------------------------------------------
+            <code>
+                https://favqs.com/api
+                https://favqs.com/api/quotes
+            </code>
+             Favorite quotes API documentation
+             Use filter to find a word  
+             Use type to find a <code>tag</code> or <code>author</code>
+             To use the<code>/quotes</code>  endpoint, an API key is required
+        </pre>
+
+        <pre>
+             Endpoint
+            ---------------------------------------------
+            <code>
+                /qotd
+            </code>
+            A path that is appended to a base URL.
+            Contain about specific resources.
+            Endpoint Question of the day.
+            NOTE: If a CORS proxy server is not used, there will be a CORS error.
+            <button onclick="handleQouteOfTheDay()">Quote of the day</button>
+        </pre>
+
+        <pre>
+            API key 
+            ------------------------------------------
+            A unique string (or code) that grants access to a REST API.
+            To use some REST API's, an API key is required 
+            Generate API Key 
+            ----------------
+            To use an API key from FavQ's.com To use an API key 
+            1. Auth tab 
+            2. Change the type to Bearer Token 
+            3. Paste API key into the token box
+           
+        </pre>
+
+        <pre> 
+            API key headers 
+            --------------------------------------------- 
+            <code>
+                const key = "abc123";
+
+                const options = {
+                    header: {
+                        Authorization: `Token token="${key}"`,
+                    },
+                }; 
+
+                const promise = fetch(url, options);
+    
+
+
+            </code>
+            1. Create an object with authorization header. 
+            2. Send a request with fetch and the object.
+          
+            <button onclick="handleQuotes">Quotes</button>
+        </pre>
+
+        <pre>
+                CORS 
+               -------------------------------------------- 
+               Cross Origin Resource Sharing 
+               Origin: The web address of the client and server 
+               Cross Origin: Different origins 
+               Resource: Data such as files and stringified objects 
+               Resource sharing: transmitting the resources 
+               <img width="50%" src="Cors1.jpg" >
+               CORS is the origin's policy for sharing resources. 
+               Servers are supposedd to tell browser their CORS policy.
+               The CORS policy is a list of origins that are allowed to access the server.
+               The browser enforces CORS.
+               Browsers block the response if the origin is not on the list.
+               ------------------------ 
+               Some servers do not specify their CORS policy 
+               Browsers automatically block responses form different origins 
+               The quotes API dosen't specify a CORS policy
+               Browsers automatically block responses from the quotes API 
+               <img width="50%" src="Cors2.jpg">
+               Postman is not a browser, so it can receive the response. 
+               The browser can receive the response because the URL matches. 
+               The VS Code terminal is not a browser, so it receives the response.
+               The browser enforces CORS. 
+               <img width="50%" src="Cors3.jpg">
+               The browser can accept responses from an API that has CORS. 
+               The trivia API has CORS for all origins. 
+             </pre>
+
+        <pre>
+               CORS Proxy Server 
+               ----------------------------------------------
+               <img width="50%" src="Cors4.jpg">
+               Allows the browser to receive repsponses from a server that does not specify CORS. 
+               1. Accepts the request from the client
+               2. Forwards the request to the API
+               3. Receives the response from the API
+               4. Manipulates the response so the browser doesn't block it
+         </pre>
+
+        <pre>
+              thingproxy 
+              -------------------------------------------------- 
+              <code>
+               
+
+                const proxy = "https://thingproxy.freeboard.io/fetch/";
+                const baseUrl = "https://favqs.com/api";
+                const endpoint = "/qotd";
+                const url = proxy + baseUrl + endpoint;
+                const promise = fetch (url);
+              </code>
+               A public proxy server that's free to use. 
+               Append the API URL to the proxy URL.
+               https://github.com/Freeboard/thingproxy
+               
+               
+
+           </pre>
+        <pre>
+                Fre APIs 
+                -------------------------------------------- 
+                <code>
+                   https://free.github.io/
+                </code>
+                Alist of free API's 
+                Some require an API key 
+                Press the ? button for color codes
+            </pre>
+
+    </main>
+    <footer></footer>
+</body>
+
+</html>

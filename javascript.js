@@ -7,6 +7,10 @@ function newObject() {
     const myCar = new MyCar();
     const myCar2 = new MyCar();
     const myCar3 = new MyCar();
+
+    myCar2.color = "white";
+    myCar3.year = 2025;
+
     display(JSON.stingify(myCar));
     display(JSON.stingify(myCar));
     display(JSON.stingify(myCar));
@@ -18,17 +22,19 @@ function classVsObject() {
         color = "red";
         year = 2024;
     }
-
-    const myCar = {
-        color: "red",
-        year: 2024,
-    };
-
-    debugger;
-    display(MyCar);
-    display(Mycar);
 }
 
+const myCar = {
+    color: "red",
+    year: 2024,
+};
+
+function classVsObject() {
+    class MyCar {
+        color = "red";
+        year = 2024;
+    }
+}
 
 function display(message) {
     document.write(message);
@@ -43,49 +49,28 @@ function myFunction(callbackFunction) {
 }
 
 function activator() {
-    debugger;
     myFunction(greeting);
 }
 
-function myFunction(callbackFunction) {
-    display("Inside myFunction");
-    myParameter;
+function delayedGreeting() {
+    setTimeout(greeting, 5000);
 }
 
-function asynchronoue() {
-    debugger;
+function asychronous() {
     setTimeout(greeting, 5000);
-    display("Waiting for the greeting...");
+    display("Waiting for a greeting...");
 }
 
 function submitForm(event) {
-    debugger;
-    event.preventDefault();
-    const inputs = event.target;
-    const emailInput = inputs[0];
+    const form = event.target;
+    const emailInput = input[0];
     const email = emailInput.value;
-    display("Submitting form for " + email + "...");
+    display("submitting form for" + email);
     setTimeout(serverResponse, 5000);
 }
 
-
-
-function makePromise() {
-    debugger;
-    const promise = new Promise(myFunction);
-    display("Made a promise.");
-}
-ddebugger;
-
-function activatorTest(myParameter) {
-    display("myParameter")
-} {
-
-}
-
-function xerverResponse() {
-    debugger;
-    displsy("form was successfully processed.");
+function serverResponse() {
+    display("Form was successfully processed.");
 }
 
 function displayObject() {
@@ -100,78 +85,62 @@ function displayObject() {
 
 function myFunction(resolve) {
     debugger;
+    setTimeout(serverResponse2, 5000);
+    display("Inside my myFunction");
 
+    function serverResponse2() {
+        display("Form was successfully processed.");
+        resolve("The promise is fulfilled");
+    }
 }
 
+function makePromise() {
+    debugger;
+    const promise = new Promise(myFunction);
+    promise.then(getMessage);
+    display("Made a promise.");
+}
 
+function getMessage(resolveValue) {
+    display(resolveValue);
+}
 
-
+function activatorTest(myParameter) {
+    debugger;
+    display("myParameter");
+}
 
 function outerFunction() {
-    const message = "Hello World";
-}
+    const message = "Message from the outerFunction";
+    innerFunction();
 
-function innerFunction() {
-    display(message);
-}
-
-
-
-
-
-
-function myFunction(resolve) {
-    setTimeout(serverResponse2, );
+    function innerFunction() {
+        display(message);
+    }
 }
 
 function handleSubmit(event) {
-    event,
-    preventDefault();
+    debugger;
+    event.preventDefault();
     const inputs = event.target;
-    const emailInput = input[0];
-    const email emailInput.value;
+    const emailInput = Input[0];
+    const email = emailInput.value;
     display("Submitting form for" + email + "...");
-    const promise = new Promise(getServerResponsees);
-    promise.then(parseResponse)
+    const promise = makeRequest("getServerResponse");
+    promise.then(parseResponse);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function getServerResponse(resolve) {
     setTimeout(activateResolve, 5000);
 
-    function activateResolve() {
+    function activateResolve(resolve) {
+
+        //SIMULATE A SERVER BY SENDING A STRINGIFIED OBJECT
         const response = {
             message: "Successfully processed.",
         };
-        const resolveValue = JSON.stringify(reponse);
+        const resolveValue = JSON.stringify(response);
         resolve(resolveValue);
     }
 }
@@ -181,4 +150,9 @@ function parseResponse(resolveValue) {
     const response = JSON.parse(resolveValue);
     const message = response.message;
     display(message);
+}
+
+function myPromise() {
+    const promise = new Promise(getServerResponse);
+    return promise;
 }

@@ -1,6 +1,44 @@
+p {
+  color: red;
+}
+
+#mixin-example {
+  box-shadow: 5px 5px gray;
+  text-shadow: 3px 3px rgb(67, 67, 67);
+}
+
+#mixin-button {
+  transform: scale(1) rotate(0deg);
+  transition: transform 1s;
+}
+
+#mixin-button:hover {
+  transform: scale(2) rotate(15deg);
+  transition: transform 2s;
+}
+
+#animated-button {
+  transform: scale(1) rotate(0deg);
+  transition: transform 1s;
+}
+#animated-button:hover {
+  transform: scale(0.5) rotate(-15deg);
+  transition: transform 2s;
+}
+
+#subtitle {
+  width: fit-content;
+  transform: scale(1) rotate(0deg);
+  transition: transform 1s;
+}
+#subtitle:hover {
+  transform: scale(0.5) rotate(-15deg);
+  transition: transform 2s;
+}
+
 @font-face {
   font-family: "Snowtop Caps";
-  src: url("SnowtopCaps.otf");
+  src: url("Snowtop Caps.otf");
 }
 main {
   font-family: "Snowtop Caps";
