@@ -6,7 +6,7 @@ function handleClick(event) {
 function parseResponse(resolveValue) {
     //THE RESOLVE VALUE WILL BE A FETCH OBJECT
     //THE TEXT METHOD EXTRACTS THE STRINGIFIED OBJECT
-    const promise = resolveValue.test();
+    const promise = resolveValue.text();
     promise.then(viewResponse);
 }
 
@@ -19,14 +19,14 @@ function viewResponse(resolveValue) {
     const item = results[0];
     const question = item.question;
     const answer = item.correct_answer;
-    const incorrects = item.incorrect_answer;
+    const incorrects = item.incorrect_answers;
 
     const trivia = `<div>${question}</div>
     <ol type="a">
-        <li>${incorrects[0]}</li>
-        <li>${incorrects[1]}</li>
-        <li>${incorrects[2]}</li>
-        <li>${answer}</li>
+       <li>${incorrects[0]}</li>
+       <li>${incorrects[1]}</li>
+       <li>${incorrects[2]}</li>
+       <li>${answer}</li>
     </ol>`
     output(trivia);
 }

@@ -8,5 +8,5 @@ function display(message) {
 
 
 function output(message) {
-    outputTwg.innerHTML += message;
+    output.innerHTML += message;
 }
